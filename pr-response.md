@@ -21,9 +21,9 @@
 **Tradeoff acknowledged:** Some people may hoenstly not want their watchlist visible, but I think that will be a minority. A feature can be added to toggle that in the future.
 
 ## Comment 5 — Sort order
-**My position:**
-**Reasoning:**
-**Engagement with reviewer's point:**
+**My position:** The sort order should be kept alphabetical and not by date added.
+**Reasoning:** Usually people don't care when something was added to their watchlist. They aren't planning an order; they just added something they were interested in. They would care more about being able to find what they want to watch on their watchlist.
+**Engagement with reviewer's point:** I understand that some people may want to find a movie they just added, but it seems rare that someone would care about that. It's more common for someone to be looking for something in particular and search by name, making alphabetical the better choice.
 
 ## Comment 6 — Rebase
 **What conflicted:**
