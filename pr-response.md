@@ -1,7 +1,11 @@
 # PR Response Doc — CineLog Watchlist Feature
 
 ## AI Usage
-<!-- Fill in at the end — how you used AI tools during this project -->
+I used AI in a few specific ways during this project:
+
+- **Comment 4 and 5 (design decisions):** After writing my own responses, I asked AI what counterarguments a reviewer might raise. For Comment 4 it raised the privacy-by-default argument (that defaulting to public exposes user data and the safer default is private). For Comment 5 it raised that the collection already sorts by date added, so a reviewer might want the watchlist to match for consistency. I considered both but kept my original positions — public default because a watchlist isn't sensitive on CineLog, and alphabetical because finding a specific film matters more than seeing recent additions.
+- **Rebase (Comment 6):** I used AI to figure out why the WatchlistEntry model disappeared after the rebase (the merge silently dropped it because main deleted it and my branch never modified that file), and to help re-add it with the UUID film_id.
+- **Commit history:** I used AI to check that my commit messages followed conventional commit format.
 
 ## Comment 1 — Rename
 **What I did:** Change the named of the function to add_to_watchlist to be consistent with the existing naming convention
@@ -31,4 +35,18 @@
 **How I verified no conflict remains:** I ran git status to confirm a clean tree, ran the full test suite with pytest and everything passed.
 
 ## PR Description
-<!-- Written at the end — feature overview, design decisions, manual testing steps -->
+
+**What the feature does:** This PR adds a watchlist to CineLog so a user can save films they want to watch later. A film is added to a user's watchlist through the add endpoint, and the service checks for duplicates so the same film can't be added to a user's watchlist twice.
+
+**Design decisions:**
+- Default visibility: watchlist entries default to public (public=True). A watchlist isn't sensitive info and most users will want theirs visible, so I defaulted to public. A toggle to make it private can be added later.
+- Sort order: the watchlist is sorted alphabetically by title instead of by date added. People usually aren't tracking when they added something, they just want to find a specific film, so alphabetical is easier to scan.
+
+**How to test it manually:**
+1. Start the app with `python app.py` (runs at http://127.0.0.1:5000).
+2. Send a POST to `/watchlist/<user_id>/add` with a JSON body like `{"film_id": "<film_uuid>"}` using curl or Postman, using a real user_id and film_id from the database. You should get back a 201 with the new watchlist entry.
+3. Send the same request again. The deduplication check prevents a duplicate entry from being created.
+4. Run the test suite with `pytest tests/ -v` to confirm the watchlist tests pass.
+
+## Commit History
+![git log --oneline](gitlogscreenshot.png)
