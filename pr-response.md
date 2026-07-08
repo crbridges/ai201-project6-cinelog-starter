@@ -4,8 +4,8 @@
 <!-- Fill in at the end — how you used AI tools during this project -->
 
 ## Comment 1 — Rename
-**What I did:**
-**How I verified:**
+**What I did:** Change the named of the function to add_to_watchlist to be consistent with the existing naming convention
+**How I verified:** I used the VScode find and replace feature. I then ran the test suite to make sure everything passes.
 
 ## Comment 2 — Deduplication
 **What I did:**
