@@ -8,8 +8,8 @@
 **How I verified:** I used the VScode find and replace feature. I then ran the test suite to make sure everything passes.
 
 ## Comment 2 — Deduplication
-**What I did:**
-**How I verified:**
+**What I did:** I added a small block of code mirroring the collection service that checks for an existing id. If found, it raises an exception. 
+**How I verified:** I used Postman to send duplicate video submissions and test the api.
 
 ## Comment 3 — Missing test
 **What I did:**
