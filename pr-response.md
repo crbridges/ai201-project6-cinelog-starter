@@ -12,8 +12,8 @@
 **How I verified:** I used Postman to send duplicate video submissions and test the api.
 
 ## Comment 3 — Missing test
-**What I did:**
-**How I verified:**
+**What I did:** I created a new file and copied over the template code from test_collection.py. I think updated the function names to test the new watchlist functions. 
+**How I verified:** I ran the test suite to see that everything is passing correctly.
 
 ## Comment 4 — Default visibility
 **My position:**
