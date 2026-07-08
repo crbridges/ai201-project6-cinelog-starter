@@ -26,9 +26,9 @@
 **Engagement with reviewer's point:** I understand that some people may want to find a movie they just added, but it seems rare that someone would care about that. It's more common for someone to be looking for something in particular and search by name, making alphabetical the better choice.
 
 ## Comment 6 — Rebase
-**What conflicted:**
-**How I resolved it:**
-**How I verified no conflict remains:**
+**What conflicted:** The .gitignore conflicted since both main and my branch had added one. The main refactor also deleted the WatchlistEntry model when it migrated film IDs to UUIDs, and because my branch never touched models.py the rebase silently dropped it.
+**How I resolved it:** I merged the two .gitignore files into one and continued the rebase. Then I added WatchlistEntry back into models.py and changed film_id from db.Integer to db.String(36) to match the new UUID Film.id, like CollectionEntry does.
+**How I verified no conflict remains:** I ran git status to confirm a clean tree, ran the full test suite with pytest and everything passed.
 
 ## PR Description
 <!-- Written at the end — feature overview, design decisions, manual testing steps -->
