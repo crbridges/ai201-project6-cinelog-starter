@@ -16,9 +16,9 @@
 **How I verified:** I ran the test suite to see that everything is passing correctly.
 
 ## Comment 4 — Default visibility
-**My position:**
-**Reasoning:**
-**Tradeoff acknowledged:**
+**My position:** We will keep the default status to True for the watchlist.
+**Reasoning:** Watchlists are usually not sensistive user information. In my opinion it would cause any issues to have to default to a public view. I think the majority of users will want their watchlist visible, so without a way to change that settings, I think its best to err on the side of pleasing the most people. 
+**Tradeoff acknowledged:** Some people may hoenstly not want their watchlist visible, but I think that will be a minority. A feature can be added to toggle that in the future.
 
 ## Comment 5 — Sort order
 **My position:**
